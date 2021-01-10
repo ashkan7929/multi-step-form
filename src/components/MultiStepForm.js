@@ -10,6 +10,13 @@ const DefaultData = {
   firstName: "",
   lastName: "",
   nickName: "",
+  address:"",
+  city:"",
+  state:"",
+  zip:"",
+  phone:"",
+  email:"",
+  
 };
 
 const steps = [
@@ -23,22 +30,22 @@ export const MultiStepForm = () => {
   const [formData, setForm] = useForm(DefaultData);
   const { step, navigation } = useStep({
     steps,
-    initialStep: 0,
+    initialStep: 1,
   });
-
-const props = {formData, setForm, navigation}
-
+  
+  const props = {formData, setForm, navigation}
+  
   switch (step.id) {
     case "names":
-      return <Names {...props} />;
+    return <Names {...props} />;
     case "address":
-      return <Address {...props} />;
+    return <Address {...props} />;
     case "contact":
-      return <Contact {...props} />;
+    return <Contact {...props} />;
     case "review":
-      return <Review {...props} />;
+    return <Review {...props} />;
     case "submit":
-      return <Submit {...props} />;
+    return <Submit {...props} />;
   }
   return <div>multi step form</div>;
 };
