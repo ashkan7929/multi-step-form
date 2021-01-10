@@ -33,8 +33,6 @@ const Names = ({formData, setForm, navigation}) => {
         name = "nickName"
         value={nickName}
         onChange = {setForm}
-        name = "nickname"
-        value={nickName}
         margin = "normal"
         variant = "outlined" autoComplete="off"
         fullWidth
