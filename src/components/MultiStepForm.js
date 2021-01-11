@@ -30,7 +30,7 @@ export const MultiStepForm = () => {
   const [formData, setForm] = useForm(DefaultData);
   const { step, navigation } = useStep({
     steps,
-    initialStep: 1,
+    initialStep: 3,
   });
   
   const props = {formData, setForm, navigation}
@@ -46,6 +46,7 @@ export const MultiStepForm = () => {
     return <Review {...props} />;
     case "submit":
     return <Submit {...props} />;
+    default:
+    return "multi step form"
   }
-  return <div>multi step form</div>;
 };
